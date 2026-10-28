@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Пекарня «Тёплый хлеб»</title>
+  <style>
+    :root {
+      --primary: #d4a373;
+      --dark: #2c2c2c;
+      --light: #f9f7f3;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: var(--dark);
+      background: var(--light);
+    }
+    header {
+      padding: 2rem 1rem;
+      text-align: center;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    }
+    h1 { margin: 0; font-size: 2.2rem; }
+    p.subtitle { color: #555; margin-top: 0.5rem; }
+    .hero {
+      padding: 3rem 1rem;
+      text-align: center;
+      background: url('https://images.unsplash.com/photo-1505274240146-8dfc3b110f5e?q=80&w=1000&auto=format&fit=crop') no-repeat center/cover;
+      color: white;
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.3);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    section { padding: 2rem 1rem; max-width: 900px; margin: auto; }
+    h2 { text-align: center; margin-bottom: 2rem; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: white;
+      padding: 1.2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .price { font-weight: bold; color: var(--primary); }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #1a1a1a;
+      color: #ccc;
+      margin-top: 2rem;
+    }
+    @media (max-width: 600px) {
+      h1 { font-size: 1.8rem; }
+      .hero { padding: 2rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Пекарня «Тёплый хлеб»</h1>
+    <p class="subtitle">Свежая выпечка каждый день</p>
+  </header>
+
+  <div class="hero">
+    <div class="hero-content">
+      <h2>Аромат свежего хлеба — наша гордость</h2>
+      <p>Мы печём с любовью и только из натуральных ингредиентов.</p>
+      <button onclick="document.getElementById('contacts').scrollIntoView()" style="padding:12px 24px; background:var(--primary); border:none; color:white; cursor:pointer; border-radius:6px; font-size:1rem;">Связаться с нами</button>
+    </div>
+  </div>
+
+  <section id="about">
+    <h2>О нас</h2>
+    <p>Пекарня «Тёплый хлеб» работает с 2018 года. Мы используем традиционные рецепты и современные технологии, чтобы каждый день радовать гостей свежей выпечкой. Всё готовим вручную, без консервантов и усилителей вкуса.</p>
+  </section>
+
+  <section id="menu">
+    <h2>Хиты меню</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Багет французский</h3>
+        <p>Хрустящая корочка и мягкий мякиш.</p>
+        <div class="price">120 ₽</div>
+      </div>
+      <div class="card">
+        <h3>Круассан классический</h3>
+        <p>С нежным сливочным вкусом.</p>
+        <div class="price">150 ₽</div>
+      </div>
+      <div class="card">
+        <h3>Булочка с корицей</h3>
+        <p>Тёплая, ароматная, с глазурью.</p>
+        <div class="price">90 ₽</div>
+      </div>
+      <div class="card">
+        <h3>Хлеб цельнозерновой</h3>
+        <p>Полезный и сытный.</p>
+        <div class="price">180 ₽</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacts">
+    <h2>Контакты</h2>
+    <p><strong>Адрес:</strong> г. Краснодар, ул. Примерная, д. 1</p>
+    <p><strong>Телефон:</strong> +7 (999) 123-45-67</p>
+    <p><strong>Часы работы:</strong> ежедневно с 08:00 до 21:00</p>
+    <p><strong>Яндекс Карты:</strong> <a href="#" style="color:var(--primary)">Открыть маршрут</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Пекарня «Тёплый хлеб». Все права защищены.</p>
+  </footer>
+</body>
+</html>

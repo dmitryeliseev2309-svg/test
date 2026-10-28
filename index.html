@@ -1,129 +1,345 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Пекарня «Тёплый хлеб»</title>
-  <style>
-    :root {
-      --primary: #d4a373;
-      --dark: #2c2c2c;
-      --light: #f9f7f3;
-    }
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      color: var(--dark);
-      background: var(--light);
-    }
-    header {
-      padding: 2rem 1rem;
-      text-align: center;
-      background: #fff;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-    }
-    h1 { margin: 0; font-size: 2.2rem; }
-    p.subtitle { color: #555; margin-top: 0.5rem; }
-    .hero {
-      padding: 3rem 1rem;
-      text-align: center;
-      background: url('https://images.unsplash.com/photo-1505274240146-8dfc3b110f5e?q=80&w=1000&auto=format&fit=crop') no-repeat center/cover;
-      color: white;
-      position: relative;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.3);
-    }
-    .hero-content {
-      position: relative;
-      z-index: 1;
-    }
-    section { padding: 2rem 1rem; max-width: 900px; margin: auto; }
-    h2 { text-align: center; margin-bottom: 2rem; }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-    }
-    .card {
-      background: white;
-      padding: 1.2rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-    .price { font-weight: bold; color: var(--primary); }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: #1a1a1a;
-      color: #ccc;
-      margin-top: 2rem;
-    }
-    @media (max-width: 600px) {
-      h1 { font-size: 1.8rem; }
-      .hero { padding: 2rem 1rem; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лавка Афанасьевых | Пекарня в Краснодаре</title>
+    <style>
+        :root {
+            --primary: #d4af37; /* Золотой акцент */
+            --dark: #2c2c2c;
+            --light: #f9f9f9;
+            --text: #333;
+            --border: #e0e0e0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background-color: var(--light);
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* Header */
+        header {
+            background: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--dark);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .logo span { color: var(--primary); }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .contact-info strong { color: var(--dark); }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: #fff;
+            padding: 12px 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 50px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover { background: #b89d2f; }
+
+        /* Menu Section */
+        .menu-section { padding: 80px 0; }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: var(--dark);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .menu-item {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .menu-item:hover { transform: translateY(-5px); }
+
+        .menu-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #ddd; /* Заглушка, если фото нет */
+        }
+
+        .menu-info { padding: 20px; }
+
+        .menu-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+
+        .menu-desc { color: #666; margin-bottom: 15px; font-size: 0.9rem; }
+
+        .menu-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--border);
+            padding-top: 15px;
+        }
+
+        .price-value {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        /* Order Form */
+        .order-section {
+            background: var(--dark);
+            color: #fff;
+            padding: 80px 0;
+        }
+
+        .order-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 10px;
+        }
+
+        .form-group { margin-bottom: 20px; }
+
+        .form-group label { display: block; margin-bottom: 8px; font-weight: bold; }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255,255,255,0.2);
+            color: #fff;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            background: rgba(255,255,255,0.3);
+            outline: none;
+        }
+
+        .qr-block {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .qr-code {
+            width: 150px;
+            height: 150px;
+            background: #fff;
+            margin: 0 auto 15px;
+            /* Сюда нужно вставить реальное изображение QR-кода */
+        }
+
+        .qr-text { font-size: 0.9rem; color: #ccc; }
+
+        /* Footer */
+        footer {
+            background: #111;
+            color: #777;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-links a { margin: 0 10px; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .header-content { flex-direction: column; gap: 1rem; }
+            .contact-info { align-items: center; margin-top: 1rem; }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Пекарня «Тёплый хлеб»</h1>
-    <p class="subtitle">Свежая выпечка каждый день</p>
-  </header>
 
-  <div class="hero">
-    <div class="hero-content">
-      <h2>Аромат свежего хлеба — наша гордость</h2>
-      <p>Мы печём с любовью и только из натуральных ингредиентов.</p>
-      <button onclick="document.getElementById('contacts').scrollIntoView()" style="padding:12px 24px; background:var(--primary); border:none; color:white; cursor:pointer; border-radius:6px; font-size:1rem;">Связаться с нами</button>
-    </div>
-  </div>
+    <header>
+        <div class="container header-content">
+            <div class="logo">Лавка <span>Афанасьевых</span></div>
+            <div class="contact-info">
+                <strong>+7 (861) 945-11-00</strong>
+                <span>Краснодар, ул. Валерия Гассия, 2А</span>
+            </div>
+        </div>
+    </header>
 
-  <section id="about">
-    <h2>О нас</h2>
-    <p>Пекарня «Тёплый хлеб» работает с 2018 года. Мы используем традиционные рецепты и современные технологии, чтобы каждый день радовать гостей свежей выпечкой. Всё готовим вручную, без консервантов и усилителей вкуса.</p>
-  </section>
+    <section class="hero">
+        <div class="container">
+            <h1>По-настоящему вкусно и с душой</h1>
+            <p>Свежий хлеб, ароматная выпечка и домашняя пицца каждый день. Пекарня, где ценят традиции и качество.</p>
+            <a href="#order" class="btn">Оформить предзаказ</a>
+        </div>
+    </section>
 
-  <section id="menu">
-    <h2>Хиты меню</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Багет французский</h3>
-        <p>Хрустящая корочка и мягкий мякиш.</p>
-        <div class="price">120 ₽</div>
-      </div>
-      <div class="card">
-        <h3>Круассан классический</h3>
-        <p>С нежным сливочным вкусом.</p>
-        <div class="price">150 ₽</div>
-      </div>
-      <div class="card">
-        <h3>Булочка с корицей</h3>
-        <p>Тёплая, ароматная, с глазурью.</p>
-        <div class="price">90 ₽</div>
-      </div>
-      <div class="card">
-        <h3>Хлеб цельнозерновой</h3>
-        <p>Полезный и сытный.</p>
-        <div class="price">180 ₽</div>
-      </div>
-    </div>
-  </section>
+    <section class="menu-section">
+        <div class="container">
+            <h2 class="section-title">Наше меню</h2>
+            <div class="menu-grid">
+                <!-- Товар 1 -->
+                <article class="menu-item">
+                    <img src="img/hleb-pshenichniy.jpg" alt="Хлеб Пшеничный" class="menu-img">
+                    <div class="menu-info">
+                        <h3 class="menu-name">Хлеб Пшеничный</h3>
+                        <p class="menu-desc">Классический пшеничный хлеб, 500 г. Идеален для бутербродов и супов.</p>
+                        <div class="menu-price">
+                            <span>1 шт.</span>
+                            <span class="price-value">55 ₽</span>
+                        </div>
+                    </div>
+                </article>
 
-  <section id="contacts">
-    <h2>Контакты</h2>
-    <p><strong>Адрес:</strong> г. Краснодар, ул. Примерная, д. 1</p>
-    <p><strong>Телефон:</strong> +7 (999) 123-45-67</p>
-    <p><strong>Часы работы:</strong> ежедневно с 08:00 до 21:00</p>
-    <p><strong>Яндекс Карты:</strong> <a href="#" style="color:var(--primary)">Открыть маршрут</a></p>
-  </section>
+                <!-- Товар 2 -->
+                <article class="menu-item">
+                    <img src="img/baton-nareznoi.jpg" alt="Батон Нарезной" class="menu-img">
+                    <div class="menu-info">
+                        <h3 class="menu-name">Батон Нарезной</h3>
+                        <p class="menu-desc">Воздушный нарезной батон, 360 г. Хрустящая корочка и мягкий мякиш.</p>
+                        <div class="menu-price">
+                            <span>1 шт.</span>
+                            <span class="price-value">50 ₽</span>
+                        </div>
+                    </div>
+                </article>
 
-  <footer>
-    <p>&copy; 2024 Пекарня «Тёплый хлеб». Все права защищены.</p>
-  </footer>
+                <!-- Товар 3 -->
+                <article class="menu-item">
+                    <img src="img/picca-domashnyaya.jpg" alt="Пицца Домашняя" class="menu-img">
+                    <div class="menu-info">
+                        <h3 class="menu-name">Пицца Домашняя</h3>
+                        <p class="menu-desc">Сочная домашняя пицца, 100 г. Идеальный перекус или дополнение к обеду.</p>
+                        <div class="menu-price">
+                            <span>1 шт.</span>
+                            <span class="price-value">80 ₽</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Товар 4 -->
+                <article class="menu-item">
+                    <img src="img/baget-osobiy.jpg" alt="Багет Особый" class="menu-img">
+                    <div class="menu-info">
+                        <h3 class="menu-name">Багет Особый</h3>
+                        <p class="menu-desc">Хрустящий багет с золотистой корочкой, 300 г. Отлично сочетается с сыром и вином.</p>
+                        <div class="menu-price">
+                            <span>1 шт.</span>
+                            <span class="price-value">50 ₽</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="order" class="order-section">
+        <div class="container order-container">
+            <h2 class="section-title" style="color: #fff; margin-bottom: 30px;">Предзаказ</h2>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Ваше имя</label>
+                    <input type="text" id="name" name="name" placeholder="Иван Иванов" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Телефон</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required>
+                </div>
+                <div class="form-group">
+                    <label for="comment">Комментарий к заказу</label>
+                    <textarea id="comment" name="comment" rows="4" placeholder="Например: Хочу 2 багета и хлеб, забрать в 18:00"></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Отправить заказ</button>
+            </form>
+
+            <div class="qr-block">
+                <p class="qr-text">Или закажите через WhatsApp:</p>
+                <!-- ВСТАВЬТЕ СЮДА КАРТИНКУ QR-КОДА -->
+                <div class="qr-code"></div> 
+                <p class="qr-text">Сканируйте код или звоните: <strong>+7 (861) 945-11-00</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Лавка Афанасьевых. Все права защищены.</p>
+            <p style="margin-top: 10px; font-size: 0.8rem;">Режим работы: 07:30 - 21:30. Скидка 30% после 20:00.</p>
+        </div>
+    </footer>
+
 </body>
 </html>

@@ -369,33 +369,54 @@
     </div>
 </section>
 
-    <section id="order" class="order-section">
+        <section id="order" class="order-section">
         <div class="container order-container">
-            <h2 class="section-title" style="color: #fff; margin-bottom: 30px;">Предзаказ</h2>
+            <h2 class="section-title" style="color: #fff; margin-bottom: 15px;">Давайте соберём ваш заказ</h2>
+            <p style="color: #ccc; margin-bottom: 30px; text-align: center; font-size: 0.95rem;">
+                Напишите, что хочется к ужину — мы всё подготовим и сохраним тёплым.
+            </p>
+            
             <form action="#" method="POST">
                 <div class="form-group">
-                    <label for="name">Ваше имя</label>
-                    <input type="text" id="name" name="name" placeholder="Иван Иванов" required>
+                    <label for="name">Как к вам обращаться</label>
+                    <input type="text" id="name" name="name" placeholder="Иван" required>
                 </div>
                 <div class="form-group">
-                    <label for="phone">Телефон</label>
+                    <label for="phone">Телефон для связи</label>
                     <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required>
                 </div>
                 <div class="form-group">
-                    <label for="comment">Комментарий к заказу</label>
-                    <textarea id="comment" name="comment" rows="4" placeholder="Например: Хочу 2 багета и хлеб, забрать в 18:00"></textarea>
+                    <label for="comment">Что добавить в заказ</label>
+                    <textarea id="comment" name="comment" rows="4" 
+                        placeholder="Например: 2 багета и хлеб, забрать в 18:00.&#10;&#10;Мы всё учтём и перезвоним, если что-то будет не так."></textarea>
                 </div>
-                <button type="submit" class="btn" style="width: 100%;">Отправить заказ</button>
+                <button type="submit" class="btn" style="width: 100%;">Собрать заказ</button>
             </form>
 
-            <div class="qr-block">
-    <p class="qr-text">Закажите через WhatsApp:</p>
-    <a href="https://wa.me/78619451100?text=Здравствуйте!%20Хочу%20сделать%20заказ%20в%20Лавке%20Афанасьевых" 
-       class="btn" style="width: auto; padding: 10px 20px; font-size: 1rem;">Написать в WhatsApp</a>
-    <p class="qr-text" style="margin-top: 15px;">Или позвоните: <strong>+7 (861) 945-11-00</strong></p>
-</div>
+            <div class="qr-block" style="margin-top: 35px; text-align: center;">
+                <p style="color: #fff; margin-bottom: 15px; font-weight: 500;">Или выберите удобный способ:</p>
+                <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                    <a href="https://wa.me/78619451100?text=Здравствуйте!%20Хочу%20сделать%20заказ%20в%20Лавке%20Афанасьевых" 
+                       class="btn" style="width: auto; padding: 10px 20px; font-size: 0.95rem;">
+                        <svg style="width: 16px; height: 16px; vertical-align: middle; margin-right: 6px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.477 12a8.488 8.488 0 0 0-2.282-5.803q-.478-.477-1.168-.477t-1.168.477l-3.42 3.419a1.59 1.59 0 0 0-1.168.477.5.5 0 0 1-.171.11L7.53 7.53a2.121 2.121 0 1 0-3.001 3.001l3.42 3.419c.477.477 1.168.477 1.645 0l1.531-1.531a1.59 1.59 0 0 0 .477-1.168.5.5 0 0 1 .171-.11l1.738 1.739a2.121 2.121 0 1 0 3.001-3.001l-3.42-3.419a.935.935 0 0 1 0-1.336z"></path>
+                        </svg>
+                        WhatsApp
+                    </a>
+                    <a href="tel:+78619451100" class="btn" style="width: auto; padding: 10px 20px; font-size: 0.95rem; background: transparent; border: 1px solid var(--primary); color: var(--primary);">
+                        <svg style="width: 16px; height: 16px; vertical-align: middle; margin-right: 6px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v2a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.18 4.08a2 2 0 0 1 0-4.07 25 25 0 0 1 19.9 19.9 2 2 0 0 1 2 2.05z"></path>
+                        </svg>
+                        Позвонить
+                    </a>
+                </div>
+                <p class="qr-text" style="margin-top: 15px; font-size: 0.9rem;">
+                    Работаем: 07:30–21:30. Скидка 30% после 20:00.
+                </p>
+            </div>
         </div>
     </section>
+
 
     <footer>
         <div class="container">

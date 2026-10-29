@@ -305,6 +305,69 @@
             </div>
         </div>
     </section>
+<section style="padding: 60px 0; background-color: var(--light);">
+    <div class="container">
+        <h2 class="section-title" style="color: var(--dark);">У нас в пекарне</h2>
+
+        <div class="gallery-wrapper" style="
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding-bottom: 20px;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        ">
+            <!-- Фото 1: витрина -->
+            <img src="img/interior-1.jpg" alt="Витрина с хлебом"
+                 style="
+                    min-width: 320px;
+                    height: 240px;
+                    object-fit: cover;
+                    border-radius: 10px;
+                    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+                    flex-shrink: 0;
+                 ">
+
+            <!-- Фото 2: печь/производство -->
+            <img src="img/bakery-oven.jpg" alt="Печь и процесс выпечки"
+                 style="
+                    min-width: 320px;
+                    height: 240px;
+                    object-fit: cover;
+                    border-radius: 10px;
+                    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+                    flex-shrink: 0;
+                 ">
+
+            <!-- Фото 3: свежий хлеб -->
+            <img src="img/fresh-bread.jpg" alt="Свежий хлеб на прилавке"
+                 style="
+                    min-width: 320px;
+                    height: 240px;
+                    object-fit: cover;
+                    border-radius: 10px;
+                    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+                    flex-shrink: 0;
+                 ">
+
+            <!-- Фото 4: нарезка/детали -->
+            <img src="img/cutting-table.jpg" alt="Процесс нарезки хлеба"
+                 style="
+                    min-width: 320px;
+                    height: 240px;
+                    object-fit: cover;
+                    border-radius: 10px;
+                    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+                    flex-shrink: 0;
+                 ">
+        </div>
+
+        <!-- Скрываем скроллбар -->
+        <style>
+            .gallery-wrapper::-webkit-scrollbar { display: none; }
+        </style>
+    </div>
+</section>
 
     <section id="order" class="order-section">
         <div class="container order-container">
